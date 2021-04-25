@@ -6,11 +6,16 @@ import SearchPannel from './components/SearchPannel';
 import ToDoList from './components/ToDoList';
 
 const App = () => {
+  const toDoData = [
+    { label: 'Drink Coffe', important: false },
+    { label: 'Drink More Coffe', important: true },
+    { label: 'Drink More More Coffe', important: false },
+  ];
   return (
     <div>
       <AppHeader />
       <SearchPannel />
-      <ToDoList />
+      <ToDoList todos = {toDoData}/>
     </div>
   );
 };
