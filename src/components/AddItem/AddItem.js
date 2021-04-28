@@ -12,11 +12,12 @@ export default class AddItem extends Component {
         this.onInputChange = (e) => {
             this.setState({ disabled: false, label: e.target.value })
         }
+
         this.onSubmit = (e) => {
             e.preventDefault()
-            
+
             this.props.onAdd(this.state.label)
-            this.setState({ label: '' })
+            this.setState({ disabled: true, label: '' })
         }
     }
 
@@ -29,7 +30,8 @@ export default class AddItem extends Component {
                     placeholder="New "
                     value={this.state.label} />
                 <button className="btn btn-outline-secondary"
-                    disabled={this.state.disabled}>Add</button>
+                    disabled={this.state.disabled}
+                    type='submit'>Add</button>
             </form>
         )
     }
